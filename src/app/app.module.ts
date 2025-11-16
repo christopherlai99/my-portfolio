@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { CompanyCardComponent } from './shared/components/company-card/company-card.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { filter } from 'rxjs/operators';
     ProjectCardComponent,
     FooterComponent,
     ExperienceComponent,
-    ExperienceItemComponent
+    ExperienceItemComponent,
+    CompanyCardComponent
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, NgxTypedJsModule],
   providers: [],

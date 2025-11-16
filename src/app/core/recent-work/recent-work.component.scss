@@ -1,0 +1,38 @@
+div.project-button{
+    text-decoration:none;
+    font-family:Helvetica;
+    font-weight: lighter;
+    vertical-align:top;
+    transition: color .2s ease;
+    background-color: var(--background-tertiary);
+    color: var(--background-secondary);
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+  
+.project-button{
+    &::before, &::after{
+      opacity:0;
+      transition: opacity 0.2s ease, transform 0.3s ease;
+      position:relative;
+      display:inline-block;
+    }
+  
+    &:hover{
+      color: #ececec;
+      font-size: 1.05rem;
+      &::before,&::after{
+        opacity:1;
+        transform: translateX(0);
+      }
+    }
+}
+
+.active-tag {
+    background-color: var(--background-secondary) !important;
+    color: var(--background-tertiary) !important;
+    border: 2px solid var(--background-tertiary) !important;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.75rem;
+}

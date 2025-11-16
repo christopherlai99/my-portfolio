@@ -2,26 +2,22 @@
   <app-section-header
     [title]="'recent work'"
     [teaser]="
-      'Get a sneak peek into my world of design and craftsmanship by diving into my latest creations.'
+      'I always try to learn new things and improve my skills. Here are some of my personal projects.'
     "
   ></app-section-header>
   <div class="row mt-5">
-    <div class="col-12">
-      <h3 class="text-uppercase">github contributions</h3>
-      <p class="content">
-        In my free time and during my studies, I actively contribute to GitHub,
-        where I passionately engage in collaborative coding projects, showcasing
-        my commitment to continuous learning and the open-source community.
-      </p>
-      <img
-        src="https://ghchart.rshah.org/BF3E21/laars1"
-        alt="Laars1 Github Chart"
-        class="img-fluid w-100"
-      />
-    </div>
     <div class="col-12 mt-4" *ngIf="data">
-      <h3 class="text-uppercase">My personal Github projects</h3>
-      <app-project-card [data]="data"></app-project-card>
+      <!-- <h3 class="text-uppercase">My personal Github projects</h3> -->
+      <div class="content-align px-3">
+        <div class="d-inline-block project-button" [ngClass]="[spacing, isPersonalSelected ? 'active-tag' : '']" (click)="selectPersonal()">
+          personal
+        </div>
+        <div class="d-inline-block project-button" [ngClass]="[spacing, isPersonalSelected ? '' : 'active-tag']" (click)="selectCompany()">
+          company
+        </div>
+      </div>
+      <app-project-card class="h-100" [data]="data" *ngIf="isPersonalSelected"></app-project-card>
+      <app-company-card [data]="comData" *ngIf="!isPersonalSelected"></app-company-card>
     </div>
   </div>
 </div>
